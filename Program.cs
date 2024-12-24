@@ -23,7 +23,7 @@ void OpcoesDoMenu ()
     switch(opcaoEscolhidaNuemerica){
         case 1: RegistrarBanda();
             break; 
-        case 2: Console.WriteLine("Opção escolhida: " + opcaoEscolhidaNuemerica); 
+        case 2: MostrarBandasRegistradas(); 
             break; 
         case 3: Console.WriteLine("Opção escolhida: " + opcaoEscolhidaNuemerica); 
             break; 
@@ -49,6 +49,25 @@ void RegistrarBanda(){
 
 }
 
+void MostrarBandasRegistradas(){
+    Console.Clear();
+    Console.WriteLine("********************************"); 
+    Console.WriteLine("Exibindo todas as bandas registradas!!"); 
+    Console.WriteLine("******************************** \n"); 
+    // for (int i = 0; i < ListaDasBandas.Count; i++){
+    //     Console.WriteLine($"Banda: {ListaDasBandas[i]}");
+
+    // }
+    
+    foreach (string banda in ListaDasBandas) // Outra forma de fazer loop me C# 
+    {
+        Console.WriteLine($"Banda: {banda}");
+    }
+    Console.WriteLine("\n Digite uma tecla para voltar ao menu");
+    Console.ReadKey();
+    Console.Clear(); 
+    OpcoesDoMenu(); 
+}
 
 
 ExibirMensagem();
