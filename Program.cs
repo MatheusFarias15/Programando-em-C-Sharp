@@ -38,7 +38,7 @@ void OpcoesDoMenu ()
 
 void RegistrarBanda(){
     Console.Clear();
-    Console.WriteLine("Registro de bandas"); 
+    ExibirTituloOpcoes("Registrar Bandas"); 
     Console.Write("Digite o nome da banda que deseja ser registrada: "); 
     string nomeDaBanda = Console.ReadLine()! ; 
     ListaDasBandas.Add(nomeDaBanda);
@@ -51,14 +51,12 @@ void RegistrarBanda(){
 
 void MostrarBandasRegistradas(){
     Console.Clear();
-    Console.WriteLine("********************************"); 
-    Console.WriteLine("Exibindo todas as bandas registradas!!"); 
-    Console.WriteLine("******************************** \n"); 
+    ExibirTituloOpcoes("Exibindo todas as bandas registradas!!");
     // for (int i = 0; i < ListaDasBandas.Count; i++){
     //     Console.WriteLine($"Banda: {ListaDasBandas[i]}");
 
     // }
-    
+
     foreach (string banda in ListaDasBandas) // Outra forma de fazer loop me C# 
     {
         Console.WriteLine($"Banda: {banda}");
@@ -69,6 +67,13 @@ void MostrarBandasRegistradas(){
     OpcoesDoMenu(); 
 }
 
+void ExibirTituloOpcoes(string titulo){
+    int QuantidadeDeLetras = titulo.Length;
+    string Asteriscos = string.Empty.PadLeft(QuantidadeDeLetras, '*');  
+    Console.WriteLine(Asteriscos);
+    Console.WriteLine(titulo);
+    Console.WriteLine(Asteriscos); 
+}
 
 ExibirMensagem();
 OpcoesDoMenu(); 
